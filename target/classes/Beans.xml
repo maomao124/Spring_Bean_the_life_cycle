@@ -16,6 +16,7 @@
 
 
     <context:component-scan base-package="t3"/>
+
     <bean id="annotationLifeCycleBean" class="t3.AnnotationLifeCycleBean">
         <constructor-arg index="0" value="baidu"/>
         <constructor-arg index="1" value="https://www.baidu.com"/>
