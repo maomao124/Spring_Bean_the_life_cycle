@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="lifeCycleBean" class="t1.LifeCycleBean">
+        <property name="webName" value="baidu"/>
+        <property name="url" value="https://www.baidu.com"/>
+    </bean>
+
+    <bean id="xmlLifeCycleBean" class="t2.XMLLifeCycleBean" init-method="init" destroy-method="destroy">
+        <property name="webName" value="baidu"/>
+        <property name="url" value="https://www.baidu.com"/>
+    </bean>
+
+
+    <context:component-scan base-package="t3"/>
+    <bean id="annotationLifeCycleBean" class="t3.AnnotationLifeCycleBean">
+        <constructor-arg index="0" value="baidu"/>
+        <constructor-arg index="1" value="https://www.baidu.com"/>
+    </bean>
+</beans>
